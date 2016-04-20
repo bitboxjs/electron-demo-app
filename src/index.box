@@ -1,0 +1,27 @@
+import bitbox from 'bitbox'
+import {body,div,h1,input,hr} from 'bitbox/elements'
+import versions from 'electron-quick-start/versions.box'
+
+export default bitbox(({ state, signals }) => {
+
+	const style = {
+		margin: '0',
+		font: '14px Helvetica Neue',
+		WebkitFontSmoothing: 'antialiased',
+		WebkitTextSizeAdjust: '100%',
+		background: bitbox.color('grey', 100)
+	}
+
+	<body return style>
+
+		<div padding=24>
+			<h1 -margin color='slate' => state.name</h1>
+			<hr />
+			<input on-input=(e => signals.nameChanged({ value: e.target.value })) value=state.name />
+		</div>
+
+		<versions />
+
+	</body>
+
+})

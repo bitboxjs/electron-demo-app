@@ -6,18 +6,27 @@ export default bitbox(({ state, signals }) => {
 
 	const style = {
 		margin: '0',
-		font: '14px Helvetica Neue',
+		font: '16px Helvetica Neue',
 		WebkitFontSmoothing: 'antialiased',
 		WebkitTextSizeAdjust: '100%',
-		background: bitbox.color('grey', 100)
+		background: bitbox.color('slate', 500),
+		color: bitbox.color('white', 0.7)
 	}
+
+	const onInput = (e) => signals.nameChanged({ value: e.target.value })
 
 	<body return style>
 
 		<div padding=24>
-			<h1 -margin color='slate' => state.name</h1>
-			<hr />
-			<input on-input=(e => signals.nameChanged({ value: e.target.value })) value=state.name />
+			<input on-input value=(state.name) +autofocus
+				style={
+					border: 'none',
+					outline: 'none',
+					fontSize: '42px',
+					background: 'transparent',
+					color: bitbox.color('slate', 50),
+					fontWeight: 'bold'
+				} />
 		</div>
 
 		<versions />

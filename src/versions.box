@@ -4,8 +4,9 @@ import {div,span} from 'bitbox/elements'
 <versions() export default>
 
 	const margin = 8
-
-	<div bg=[null, 700] color=['white', 0.9] padding=16>
+	const style = { transition: 'background 0.3s' }
+	
+	<div bg=[null, 700] color=['white', 0.9] padding=16 style>
 		<span margin => `node: ${process.versions.node}`</span>
 		<span margin => `chrome: ${process.versions.chrome}`</span>
 		<span margin => `electron: ${process.versions.electron}`</span>
